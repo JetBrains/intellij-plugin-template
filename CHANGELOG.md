@@ -3,6 +3,32 @@
 # IntelliJ Platform Plugin Template Changelog
 
 ## [Unreleased]
+### Added
+- Plugin Signing run configuration
+- GitHub Actions: UI Tests workflow
+- Suppress `UnusedProperty` inspection for the `kotlin.stdlib.default.dependency` in `gradle.properties`
+- Use Gradle `wrapper` task to handle Gradle updates
+- JVM compatibility version extracted to `gradle.properties` file
+- `Publish Plugin` run configuration
+
+### Changed
+- GitHub Actions: Use Java 11
+- GitHub Actions: update Build and Release flows
+- Update `pluginVerifierIdeVersions` to `2020.3.4, 2021.1.3, 2021.2`
+- Change since/until build to `203-212.*`
+- Upgrade Gradle Wrapper to `7.2`
+- Gradle – Changelog plugin configuration update
+- Dependencies - upgrade `org.jetbrains.kotlin.jvm` to `1.5.21`
+- Dependencies - upgrade `org.jetbrains.changelog` to `1.2.1`
+- Dependencies - upgrade `org.jetbrains.intellij` to `1.1.4`
+- Dependencies (GitHub Actions) - upgrade `actions/upload-artifact` to `v2.2.4`
+
+### Fixed
+- Use `DynamicBundle` instead of `AbstractBundle` in `MyBundle.kt`
+
+### Removed
+- Removed `detekt`/`ktlint` integration
+
 ## [0.10.1]
 ### Added
 - Introduced `next` branch in the root repository to make `main` always a stable one
@@ -182,15 +208,10 @@
 - Gradle - remove kotlin("stdlib-jdk8") dependency to decrease the plugin artifact size
 - Dependencies - bump ktlint to `9.3.0`
 - GitHub Actions - make *Update Changelog* job dependent on the *Publish Plugin*
-
-### Fixed
-- Resolve ktlint reports
-
-## [0.3.1]
-### Changed
 - GitHub Actions - run plugin verifier against `2019.3` `2020.1` `2020.2`
 
 ### Fixed
+- Resolve ktlint reports
 - GitHub Actions - Plugin Verifier broken for artifacts with whitespaces in name
 
 ## [0.3.0]
